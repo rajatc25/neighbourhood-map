@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Neighbourhood Map</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="./css/style.css">
+   </head>
+   <body>
+      <div id="wrapper">
+      <header class="page-header">
+         <div class="header-wrapper flex-box">
+            <div class="button-container">
+               <a href="#menu-toggle"  id="menu-toggle"><img id="arrow" style="width: 50px" src="images/arrowClose.png"></a>
+            </div>
+            <div class="project-title">
+               <div>
+                  <h1 class="text-center" style="font-weight: bold">Neighbourhood Map: Surat</h1>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div id="wrapper1">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+         <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+               <a "href="#">Select a Category</a>
+            </li>
+            <li>
+               <select class="category-items" data-bind="options: categoryOptions, value: selectedCategory"></select>
+            </li>
+            <ul data-bind="foreach: locationList">
+               <li class= "list-items" data-bind="text: name, click: $parent.openWindow, visible: isVisible">
+               </li>
+            </ul>
+         </ul>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-lg-12 container">
+                  <div id = "map">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- /#page-content-wrapper -->
+      </div>
+      <!-- /#wrapper -->	
+      <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+      <script src="js/interactivity.js"></script>
+      <script src="js/knockout-3.4.2.js"></script>
+      <script src="js/model.js"></script>
+      <script src="js/map.js"></script>
+      <script src="js/app.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyBnE6GjjDg4ocPmv486eomC5L8QEB5rt78&callback=initMap" onerror="mapError()"
+         async defer></script>
+   </body>
+</html>
